@@ -10,8 +10,12 @@ import { AsyncService } from './demo1/async.service';
 import { Demo2Component } from './demo2/demo2.component';
 import { Demo3Component } from './demo3/demo3.component';
 
-
+import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/delay';
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/observable/of';
+
 
 
 export const routes = [{
@@ -25,7 +29,12 @@ export const routes = [{
   {
     path: '3/:num',
     component: Demo3Component,
-  }
+  },
+  {
+    path: '3',
+    redirectTo: '/3/10',
+    pathMatch: 'full'
+  },
   // {
   //   path: 'game/:game',
   //   component: GameComponent

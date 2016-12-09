@@ -1,3 +1,17 @@
-<p>
-  demo3 works!
+<h1>Router is Observable</h1>
+
+
+
+<p class="item">
+  <span *ngIf="loading" class="loading">Loading... <br /></span>
+
+  Result async operation: {{ obs$ | async }}
+
+  <br />
+
+  <button [routerLink]="['/3', '20']">Calc 10</button>
+  <button [routerLink]="['/3', '50']">Calc 50</button>
+  <button [routerLink]="['/3', '100']">Calc 100</button>
+
+
 </p>

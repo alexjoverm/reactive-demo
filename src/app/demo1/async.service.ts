@@ -53,5 +53,9 @@ export class AsyncService {
     });
   }
 
+  asyncMultiply(n: number): Observable<number> {
+    return Observable.of(n * 2).delay(2000);
+  }
+
 
 }

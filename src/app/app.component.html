@@ -1,8 +1,13 @@
 <nav>
   <ul>
-    <li [routerLink]="" routerLinkActive="active">1</li>
-    <li [routerLink]="2" routerLinkActive="active">2</li>
-    <li [routerLink]="3/10" routerLinkActive="active">3</li>
+    <li [routerLink]="'/'"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}">1</li>
+    <li [routerLink]="'/2'"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}">2</li>
+    <li [routerLink]="['3']"
+      routerLinkActive="active">3</li>
 
   </ul>
   <img src="/assets/logos.png" alt="">
