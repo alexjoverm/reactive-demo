@@ -18,6 +18,7 @@ import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/observable/of';
 import { Demo4Component } from './demo4/demo4.component';
+import { Demo5Component } from './demo5/demo5.component';
 
 
 
@@ -36,6 +37,10 @@ export const routes = [{
   {
     path: '4',
     component: Demo4Component,
+  },
+  {
+    path: '5',
+    component: Demo5Component,
   },
   {
     path: '3',
@@ -66,7 +71,8 @@ export const routes = [{
     Demo1Component,
     Demo2Component,
     Demo3Component,
-    Demo4Component
+    Demo4Component,
+    Demo5Component
   ],
   imports: [
     RouterModule.forRoot(routes, {useHash: false}),
