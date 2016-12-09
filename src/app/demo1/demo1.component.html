@@ -1,12 +1,15 @@
-<h1>An Observable</h1>
+<h1>Observables are lazy, and can be cancelled</h1>
+
 
 <p class="item">
-  Waiting {{ delay1 }} ms.
-  Observable 1: {{ counter$ | async }}
+  <span class="title">With a promise:</span>
+  <button (click)="addPromise()">Add Promise</button>
+  Waiting for promise to resolve: {{ promise | async }}
 </p>
 
-<p>
-  <button (click)="add()">Add observable</button>
 
-  Observable 2: {{ counter2$ | async }}
+<p class="item">
+  <span class="title">With an observable</span>
+  <button (click)="add()">Add observable</button>
+  Observable 2: {{ counter$ | async }}
 </p>

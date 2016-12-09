@@ -13,7 +13,7 @@ export class Demo1Component implements OnInit {
 
 
   counter$: Observable<any>;
-  counter2$: Observable<any>;
+  promise: Promise<number>;
 
   delay1: number = 2000;
 
@@ -21,13 +21,15 @@ export class Demo1Component implements OnInit {
 
   ngOnInit() {
 
-    this.counter$ = this.as.getNumber(this.delay1);
   }
 
   add() {
-    this.counter2$ = this.as.getTimer(1000)
+    this.counter$ = this.as.getNumber(1000)
       .map((a: number) => (a * 10) + ' result');
+  }
 
+  addPromise() {
+    this.promise = this.as.getNumberPromise(1000);
   }
 
 }
