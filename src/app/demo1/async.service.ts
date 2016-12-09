@@ -44,6 +44,8 @@ export class AsyncService {
         obs.next(ct++);
       }, speed);
 
+      obs.next(ct++);
+
       return () => {
         console.log('cancelled');
         clearTimeout(t);

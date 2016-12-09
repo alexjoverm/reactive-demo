@@ -10,12 +10,17 @@ import { AsyncService } from './demo1/async.service';
 
 
 import 'rxjs/add/operator/map';
+import { Demo2Component } from './demo2/demo2.component';
 
 
 
 export const routes = [{
     path: '',
     component: Demo1Component,
+  },
+  {
+    path: '2',
+    component: Demo2Component,
   }
   // {
   //   path: 'game/:game',
@@ -38,7 +43,8 @@ export const routes = [{
 @NgModule({
   declarations: [
     AppComponent,
-    Demo1Component
+    Demo1Component,
+    Demo2Component
   ],
   imports: [
     RouterModule.forRoot(routes, {useHash: false}),
