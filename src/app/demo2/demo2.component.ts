@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { Subscription } from 'rxjs/Subscription';
 import { AsyncService } from '../demo1/async.service';
@@ -8,7 +8,7 @@ import { AsyncService } from '../demo1/async.service';
   templateUrl: './demo2.component.html',
   styleUrls: ['./demo2.component.css']
 })
-export class Demo2Component implements OnInit {
+export class Demo2Component implements OnInit, OnDestroy {
 
   subs: Subscription;
   values: string;
@@ -41,6 +41,12 @@ export class Demo2Component implements OnInit {
   cancel() {
     this.subs.unsubscribe();
     this.toggle = false;
+  }
+
+  ngOnDestroy() {
+    if (this.subs) {
+      this.subs.unsubscribe();
+    }
   }
 
 

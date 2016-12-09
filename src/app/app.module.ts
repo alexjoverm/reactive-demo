@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { Demo1Component } from './demo1/demo1.component';
@@ -11,10 +12,12 @@ import { Demo2Component } from './demo2/demo2.component';
 import { Demo3Component } from './demo3/demo3.component';
 
 import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/observable/of';
+import { Demo4Component } from './demo4/demo4.component';
 
 
 
@@ -29,6 +32,10 @@ export const routes = [{
   {
     path: '3/:num',
     component: Demo3Component,
+  },
+  {
+    path: '4',
+    component: Demo4Component,
   },
   {
     path: '3',
@@ -58,13 +65,15 @@ export const routes = [{
     AppComponent,
     Demo1Component,
     Demo2Component,
-    Demo3Component
+    Demo3Component,
+    Demo4Component
   ],
   imports: [
     RouterModule.forRoot(routes, {useHash: false}),
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    ReactiveFormsModule
   ],
   providers: [
     AsyncService

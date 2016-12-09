@@ -1,0 +1,21 @@
+<h1>Formularios Observables</h1>
+<p class="item">
+
+  <span
+    *ngIf="loading"
+    class="loading">Loading...</span>
+
+
+  <input
+    name="numero"
+    type="number"
+    [formControl]="num$" />
+
+  <br />
+
+  <span class="result">
+  Async Multiply result: {{ result$ | async }}
+  </span>
+
+
+</p>
