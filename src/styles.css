@@ -1,1 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+nav {
+  height: 100px;
+  display: block;
+  border-bottom: 2px dashed #eaeaea;
+}
+
+nav ul {
+  width: 60%;
+  display: block;
+  float: left;
+  padding-left: 0px;
+
+}
+
+nav ul li {
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  float: left;
+  list-style: none;
+  padding: 10px;
+  margin-right: 10px;
+  background-color: #eaeaea;
+  cursor: pointer;
+}
+
+nav ul li.active {
+  background-color: #fe0090;
+  color: #fff;
+}
+
+nav img {
+  float: right;
+  width: 120px;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: #fe0090;
+}
+
+
+.item {
+
+  border: 1px solid #eaeaea;
+  padding: 20px;
+  border-radius: 5px;
+  line-height: 32px;
+
+}
+
+
+.item .title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 10px;
+  display: block;
+  color: #57008e;
+
+}
+
+span.result {
+  color: #57008e;
+  font-weight: bolder;
+}

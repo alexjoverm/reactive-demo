@@ -4,12 +4,13 @@
 <p class="item">
   <span class="title">With a promise:</span>
   <button (click)="addPromise()">Add Promise</button>
-  Waiting for promise to resolve: {{ promise | async }}
+  Waiting for promise to resolve:
+  <span class="result">{{ promise | async }}</span>
 </p>
 
 
 <p class="item">
   <span class="title">With an observable</span>
   <button (click)="add()">Add observable</button>
-  Observable 2: {{ counter$ | async }}
+  <span class="result">Observable 2: {{ counter$ | async }}</span>
 </p>

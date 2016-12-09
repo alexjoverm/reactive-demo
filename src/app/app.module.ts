@@ -7,11 +7,11 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { Demo1Component } from './demo1/demo1.component';
 import { AsyncService } from './demo1/async.service';
+import { Demo2Component } from './demo2/demo2.component';
+import { Demo3Component } from './demo3/demo3.component';
 
 
 import 'rxjs/add/operator/map';
-import { Demo2Component } from './demo2/demo2.component';
-
 
 
 export const routes = [{
@@ -21,6 +21,10 @@ export const routes = [{
   {
     path: '2',
     component: Demo2Component,
+  },
+  {
+    path: '3/:num',
+    component: Demo3Component,
   }
   // {
   //   path: 'game/:game',
@@ -44,7 +48,8 @@ export const routes = [{
   declarations: [
     AppComponent,
     Demo1Component,
-    Demo2Component
+    Demo2Component,
+    Demo3Component
   ],
   imports: [
     RouterModule.forRoot(routes, {useHash: false}),

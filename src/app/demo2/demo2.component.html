@@ -1,13 +1,11 @@
 <h1>Observables can be cancelled</h1>
-<p>
-  An obsercvable stream:
 
-{{ values }}
+<p class="item">
+  An observable stream: <br />
 
+ <span class="result">{{ values }}</span>
 <br/>
-
 <button (click)="cancel()" *ngIf="toggle">Cancel</button>
 <button (click)="start()" *ngIf="!toggle">Start</button>
-
 
 </p>
