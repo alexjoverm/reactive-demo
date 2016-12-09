@@ -1,0 +1,12 @@
+<h1>An Observable</h1>
+
+<p class="item">
+  Waiting {{ delay1 }} ms.
+  Observable 1: {{ counter$ | async }}
+</p>
+
+<p>
+  <button (click)="add()">Add observable</button>
+
+  Observable 2: {{ counter2$ | async }}
+</p>
