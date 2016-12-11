@@ -35,6 +35,26 @@ export class AsyncService {
     });
   }
 
+  getNumberError(speed: Number) {
+    let num = counter++;
+    return new Observable(obs => {
+      let t = setTimeout(() => {
+        num++;
+        // console.log('next value:', num++);
+        if (num % 2 !== 0 ) {
+          counter++;
+          obs.error(`INVALID ${num}`);
+        } else {
+          obs.next(num);
+        }
+      }, speed);
+
+      return () => {
+        clearTimeout(t);
+      };
+    });
+  }
+
 
   getTimer(speed: number): Observable<number> {
     return new Observable(obs => {

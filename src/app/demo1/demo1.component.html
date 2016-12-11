@@ -14,3 +14,13 @@
   <button (click)="add()">Add observable</button>
   <span class="result">Observable 2: {{ counter$ | async }}</span>
 </p>
+
+
+<h1>Retry on errors</h1>
+
+<p class="item">
+  <span class="loading" *ngIf="err != ''">{{ err }} {{ errct$ | async }}s</span>
+  <span class="title">First with an error</span>
+  <button (click)="addError()">Retry observable</button>
+  <span class="result">Observable 3: {{ obserror$ | async }}</span>
+</p>
