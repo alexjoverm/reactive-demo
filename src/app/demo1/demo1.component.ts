@@ -13,8 +13,9 @@ export class Demo1Component implements OnInit {
 
 
   counter$: Observable<any>;
-  promise: Promise<number>;
+  promise: number;
   obserror$: Observable<number>;
+  currentP: number = 1;
 
   errct$ = Observable.timer(0, 1000)
     .map(a => 4 - a);
@@ -35,7 +36,14 @@ export class Demo1Component implements OnInit {
   }
 
   addPromise() {
-    this.promise = this.as.getNumberPromise(1000);
+    const write = w => this.promise = w;
+
+    if ( (this.currentP % 2) !== 0 ) {
+      this.as.getNumberPromise(3000).then(write);
+    } else {
+      this.as.getNumberPromise(100).then(write);
+    }
+    this.currentP++;
   }
 
   addError() {

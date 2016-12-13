@@ -26,11 +26,12 @@ export class AsyncService {
 
 
   getNumberPromise(delay): Promise<number> {
+    let val = counter++;
+    console.log('Promise created', val);
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        counter++;
-        console.log('Promise resolved', counter);
-        resolve(counter);
+        console.log('Promise resolved', val);
+        resolve(val);
       }, delay);
     });
   }
