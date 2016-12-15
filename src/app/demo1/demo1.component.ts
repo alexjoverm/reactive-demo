@@ -3,7 +3,6 @@ import { AsyncService } from './async.service';
 
 import { Observable } from 'rxjs/Observable';
 
-
 @Component({
   selector: 'app-demo1',
   templateUrl: './demo1.component.html',
@@ -17,6 +16,7 @@ export class Demo1Component implements OnInit {
   obserror$: Observable<number>;
   currentP: number = 1;
 
+  // errCancel$ = new Subject();
   errct$ = Observable.timer(0, 1000)
     .map(a => 4 - a);
 
@@ -47,6 +47,7 @@ export class Demo1Component implements OnInit {
   }
 
   addError() {
+    this.err = '';
     this.obserror$ = this.as
       .getNumberError(100)
       .catch((err, obse) => {
