@@ -3,9 +3,7 @@
 <p class="item">
   An observable stream: <br />
 
- <span class="result">{{ values }}</span>
-<br/>
-<button (click)="cancel()" *ngIf="toggle">Cancel</button>
-<button (click)="start()" *ngIf="!toggle">Start</button>
+ <span class="result">{{ values$ | async }}</span>
+
 
 </p>
